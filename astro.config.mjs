@@ -36,6 +36,9 @@ export default defineConfig({
         },
       ],
       customCss: ['./src/styles/custom.css'],
+      components: {
+        ThemeSelect: './src/components/ThemeToggle.astro',
+      },
     }),
   ],
 });

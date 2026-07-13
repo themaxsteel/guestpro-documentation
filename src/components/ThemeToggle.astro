@@ -1,0 +1,146 @@
+---
+const label = Astro.locals.t('themeSelect.accessibleLabel');
+---
+
+<starlight-theme-toggle>
+	<button type="button" class="kb-theme-switch" role="switch" aria-checked="false" aria-label={label}>
+		<span class="kb-theme-switch__track">
+			<span class="kb-theme-switch__thumb">
+				<svg class="kb-theme-switch__icon kb-theme-switch__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<circle cx="12" cy="12" r="4"></circle>
+					<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+				</svg>
+				<svg class="kb-theme-switch__icon kb-theme-switch__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+				</svg>
+			</span>
+		</span>
+	</button>
+</starlight-theme-toggle>
+
+{/* Inlined to avoid FOUC. Uses global scope from `ThemeProvider.astro` */}
+<script is:inline>
+	StarlightThemeProvider.updatePickers();
+</script>
+
+<style>
+	.kb-theme-switch {
+		display: inline-flex;
+		align-items: center;
+		padding: 0;
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 999px;
+		background: var(--sl-color-bg-nav);
+		cursor: pointer;
+		flex-shrink: 0;
+	}
+
+	.kb-theme-switch__track {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 3.25rem;
+		height: 1.75rem;
+		padding: 0.15rem;
+		border-radius: inherit;
+	}
+
+	.kb-theme-switch__thumb {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.45rem;
+		height: 1.45rem;
+		border-radius: 50%;
+		background: var(--sl-color-accent);
+		color: var(--sl-color-white, #fff);
+		transform: translateX(0);
+		transition: transform var(--kb-transition, 160ms ease), background-color var(--kb-transition, 160ms ease);
+	}
+
+	.kb-theme-switch[aria-checked='true'] .kb-theme-switch__thumb {
+		transform: translateX(1.5rem);
+	}
+
+	.kb-theme-switch__icon {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.kb-theme-switch__icon--sun {
+		opacity: 1;
+	}
+
+	.kb-theme-switch__icon--moon {
+		opacity: 0;
+	}
+
+	.kb-theme-switch[aria-checked='true'] .kb-theme-switch__icon--sun {
+		opacity: 0;
+	}
+
+	.kb-theme-switch[aria-checked='true'] .kb-theme-switch__icon--moon {
+		opacity: 1;
+	}
+</style>
+
+<script>
+	type Theme = 'auto' | 'dark' | 'light';
+
+	/** Key in `localStorage` to store color theme preference at. */
+	const storageKey = 'starlight-theme';
+
+	/** Get a typesafe theme string from any JS value (unknown values are coerced to `'auto'`). */
+	const parseTheme = (theme: unknown): Theme =>
+		theme === 'auto' || theme === 'dark' || theme === 'light' ? theme : 'auto';
+
+	/** Load the user’s preference from `localStorage`. */
+	const loadTheme = (): Theme =>
+		parseTheme(typeof localStorage !== 'undefined' && localStorage.getItem(storageKey));
+
+	/** Store the user’s preference in `localStorage`. */
+	function storeTheme(theme: Theme): void {
+		if (typeof localStorage !== 'undefined') {
+			localStorage.setItem(storageKey, theme === 'light' || theme === 'dark' ? theme : '');
+		}
+	}
+
+	/** Get the preferred system color scheme. */
+	const getPreferredColorScheme = (): Theme =>
+		matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+	/** Resolve a theme setting (including `auto`) to the effective `light`/`dark` value. */
+	const resolveTheme = (theme: Theme): 'light' | 'dark' =>
+		theme === 'auto' ? (getPreferredColorScheme() === 'light' ? 'light' : 'dark') : theme;
+
+	/** Update switch UI, document theme, and local storage state. */
+	function onThemeChange(theme: Theme): void {
+		StarlightThemeProvider.updatePickers(theme);
+		const effective = resolveTheme(theme);
+		document.documentElement.dataset.theme = effective;
+		storeTheme(theme);
+
+		const button = document.querySelector<HTMLButtonElement>('.kb-theme-switch');
+		if (button) {
+			button.setAttribute('aria-checked', String(effective === 'dark'));
+		}
+	}
+
+	// React to changes in system color scheme.
+	matchMedia(`(prefers-color-scheme: light)`).addEventListener('change', () => {
+		if (loadTheme() === 'auto') onThemeChange('auto');
+	});
+
+	class StarlightThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+			onThemeChange(loadTheme());
+			this.querySelector('button')?.addEventListener('click', () => {
+				const current = resolveTheme(loadTheme());
+				onThemeChange(current === 'dark' ? 'light' : 'dark');
+			});
+		}
+	}
+	customElements.define('starlight-theme-toggle', StarlightThemeToggle);
+</script>
