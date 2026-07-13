@@ -35,6 +35,23 @@ export default defineConfig({
           ],
         },
         {
+          label: 'PMS - Frontdesk',
+          items: [
+            { label: 'Reservation', link: '/pms/frontdesk/reservation/' },
+            { label: 'Room Plan', link: '/pms/frontdesk/room-plan/' },
+            { label: 'Import Reservation', link: '/pms/frontdesk/import-reservation/' },
+            { label: 'Night Audit', link: '/pms/frontdesk/night-audit/' },
+            { label: 'Group Reservation', link: '/pms/frontdesk/group-reservation/' },
+            { label: 'Cancel Group Reservation', link: '/pms/frontdesk/cancel-group-reservation/' },
+            { label: 'Guest List Daily', link: '/pms/frontdesk/guest-list-daily/' },
+            { label: 'Guest Profile', link: '/pms/frontdesk/guest-profile/' },
+            { label: 'Payment', link: '/pms/frontdesk/payment/' },
+            { label: 'Deposit / DP', link: '/pms/frontdesk/deposit-dp/' },
+            { label: 'Pembuatan User & Role', link: '/pms/frontdesk/user-role/' },
+            { label: 'Dummy Folio', link: '/pms/frontdesk/dummy-folio/' },
+          ],
+        },
+        {
           label: 'PMS - Master Data',
           items: [
             { label: 'Agent Mapping', link: '/pms/master-data/agent-mapping/' },
