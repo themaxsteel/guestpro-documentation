@@ -6,6 +6,11 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Support Knowledge Base',
+      logo: {
+        src: './src/assets/logo.png',
+        alt: 'GuestPro',
+      },
+      favicon: '/favicon.png',
       locales: {
         root: { label: 'Indonesia', lang: 'id' },
       },
