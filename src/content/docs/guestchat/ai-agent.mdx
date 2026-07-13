@@ -1,0 +1,74 @@
+---
+title: AI Assistant & AI Agent
+description: Detail fitur AI Assistant dan AI Agent di GuestChat
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Bantuan AI untuk Membalas Tamu Lebih Cepat (AI Assistant)
+
+GuestChat dilengkapi bantuan AI yang siap membantu tim menyusun balasan. Cukup klik, dan draft jawaban langsung tersedia. Tim bisa mengirim (**Send**), menyesuaikan (**Edit**), atau meminta versi baru (**Retry**). Bisa juga memberi instruksi khusus seperti *"buat versi bahasa Inggris"*, atau memilih nada balasan: **Friendly**, **Formal**, **Brief**, **Apologize politely**.
+
+:::caution[Gambar belum tersedia]
+Ganti placeholder gambar dengan screenshot panel AI Assistant yang asli.
+:::
+
+## AI Agent: Asisten Cerdas yang Memahami Property Anda
+
+AI Assistant membantu merapikan kalimat, sedangkan **AI Agent** bekerja di tingkat yang lebih pintar karena mengenal data dan layanan property. AI Agent bisa menjawab pertanyaan tamu secara spesifik — ketersediaan kamar, informasi fasilitas, sampai membantu proses pemesanan — layaknya staff yang paham betul isi property.
+
+### Dua Mode Kerja
+
+<Tabs>
+	<TabItem label="Mode Otomatis">
+		**Auto-Send Reply aktif** — AI Agent langsung membalas pesan tamu di WhatsApp secara otomatis, tanpa menunggu staff. Cocok untuk respons cepat 24 jam.
+	</TabItem>
+	<TabItem label="Mode Rekomendasi">
+		**Auto-Send Reply nonaktif** — AI Agent hanya menyiapkan draft balasan sebagai saran. Staff tetap memegang keputusan akhir sebelum pesan terkirim.
+	</TabItem>
+</Tabs>
+
+### Tiga Spesialis dalam Satu AI Agent
+
+#### 1. Reservation Agent (Kamar & Pemesanan)
+
+Menangani segala hal seputar reservasi secara real-time:
+
+- Cek ketersediaan harian (*Daily Availability*)
+- Menampilkan kamar yang tersedia (*List Available Rooms*)
+- Detail informasi kamar (*Room Detail*)
+- Membuat reservasi (*Create Reservation*) — AI Agent dapat memproses pemesanan sampai tahap mengirimkan tautan pembayaran langsung ke tamu, lengkap dengan Invoice ID, rincian biaya, tanggal menginap, dan tipe kamar. Tamu tinggal klik tautan untuk menyelesaikan pembayaran, dan sistem memantau status pembayarannya tanpa perlu staff mengirim manual.
+
+#### 2. Concierge Agent (Informasi Property)
+
+Menjawab pertanyaan seputar property dan sekitarnya:
+
+- Informasi hotel (*Hotel Information*)
+- Kontak & media sosial (*Contact & Social Media*)
+- Destinasi terdekat (*Nearby Destination*)
+- Kebijakan umum (*General Policy*)
+
+#### 3. Additional Service Agent (Layanan Tambahan)
+
+Membantu tamu menemukan pengalaman ekstra selama menginap:
+
+- Ringkasan Room Dining & Spa (*Room Dining & Spa Overview*)
+- Daftar aktivitas (*List Activities*)
+- Daftar outlet (*List Outlet*)
+- Detail umum aktivitas & outlet (*General Details*)
+- Link produk lengkap (*Full Product Item Link*)
+- Pencarian berdasarkan preferensi tamu (*Search by Preferences*)
+
+### Pengaturan yang Bisa Disesuaikan
+
+| Pengaturan | Fungsi |
+|---|---|
+| **AI Identity** | Atur nama AI, nada bicara (Formal/Friendly), dan bahasa. Ada deteksi bahasa otomatis dan bahasa cadangan (*fallback*). |
+| **AI FAQ** | Tambahkan tanya-jawab kustom sebagai rujukan AI. Tiap FAQ bisa diaktif/dinonaktifkan. |
+| **Conversation Behavior** | Atur jeda respons (*debounce*) agar pesan beruntun digabung jadi satu, aktifkan/nonaktifkan Auto-Send, atur penutup jawaban dengan tawaran bantuan lanjutan. |
+| **Fallback & Escalation** | Tentukan pesan saat AI tidak bisa menjawab, serta kondisi yang otomatis mengalihkan ke staff manusia. |
+| **Chat Settings** | Preferensi tampilan panel AI di sisi staff — auto-buka panel saran, auto-fokus kolom input, tombol Enter untuk kirim. |
+
+:::tip[Catatan]
+Dengan kombinasi ini, AI Agent dapat berperan sebagai resepsionis digital yang siap 24 jam untuk menjawab, menginformasikan, hingga membantu tamu memesan — sambil tetap mengalihkan percakapan ke tim saat diperlukan.
+:::

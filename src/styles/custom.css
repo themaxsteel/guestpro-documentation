@@ -1,0 +1,197 @@
+/* =========================================================
+   Support Knowledge Base — Custom Theme
+   Gaya: Hijau segar · Rapi & minimalis
+   Menimpa token bawaan Starlight (light + dark)
+   ========================================================= */
+
+/* ---------- Palet aksen hijau (dark mode / default) ---------- */
+:root {
+  /* Accent hijau/emerald */
+  --sl-color-accent-low: #10291d;
+  --sl-color-accent: #1f9d6b;
+  --sl-color-accent-high: #a7e8c8;
+
+  /* Teks aksen (link, judul aktif) */
+  --sl-color-text-accent: #4ecf9a;
+
+  /* Radius & transisi konsisten */
+  --kb-radius: 12px;
+  --kb-radius-sm: 8px;
+  --kb-transition: 160ms ease;
+  --kb-ring: 0 0 0 3px rgba(31, 157, 107, 0.35);
+}
+
+/* ---------- Light mode ---------- */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d7f4e6;
+  --sl-color-accent: #12855a;
+  --sl-color-accent-high: #0a3d29;
+
+  --sl-color-text-accent: #0f7a52;
+
+  /* Sedikit hangatkan background terang agar tidak sebruk putih murni */
+  --sl-color-gray-7: #f4f8f6;
+  --sl-color-gray-6: #eef3f0;
+}
+
+/* =========================================================
+   Header / Nav
+   ========================================================= */
+.header {
+  backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+/* Site title lebih tegas */
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Search box lebih lembut */
+site-search button,
+.sl-flex site-search {
+  border-radius: var(--kb-radius-sm);
+}
+
+/* =========================================================
+   Sidebar navigasi
+   ========================================================= */
+.sidebar-content a {
+  border-radius: var(--kb-radius-sm);
+  transition: background-color var(--kb-transition), color var(--kb-transition);
+}
+
+/* Item aktif diberi latar aksen tipis + garis kiri */
+.sidebar-content a[aria-current='page'] {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-text-accent);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--sl-color-accent);
+}
+
+.sidebar-content a:hover:not([aria-current='page']) {
+  background-color: color-mix(in srgb, var(--sl-color-accent-low) 55%, transparent);
+}
+
+/* Judul grup sidebar */
+.sidebar-content summary,
+.sidebar-content .large {
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   Konten & tipografi
+   ========================================================= */
+.sl-markdown-content {
+  line-height: 1.7;
+}
+
+/* Heading dengan spacing lebih lega */
+.sl-markdown-content :is(h2, h3) {
+  letter-spacing: -0.01em;
+  scroll-margin-top: 6rem;
+}
+
+.sl-markdown-content h2 {
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+/* Link dalam konten: underline halus */
+.sl-markdown-content a {
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--sl-color-text-accent) 45%, transparent);
+  transition: text-decoration-color var(--kb-transition);
+}
+.sl-markdown-content a:hover {
+  text-decoration-color: var(--sl-color-text-accent);
+}
+
+/* Inline code */
+.sl-markdown-content :not(pre) > code {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-text-accent);
+  border: 1px solid color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+  border-radius: 6px;
+  font-size: 0.85em;
+  padding: 0.15em 0.4em;
+}
+
+/* Blok kode lebih halus */
+.sl-markdown-content pre {
+  border-radius: var(--kb-radius);
+  border: 1px solid var(--sl-color-hairline);
+}
+
+/* Tabel rapi */
+.sl-markdown-content table {
+  border-radius: var(--kb-radius-sm);
+  overflow: hidden;
+}
+.sl-markdown-content th {
+  background-color: var(--sl-color-gray-6);
+}
+
+/* =========================================================
+   Komponen Card / CardGrid
+   ========================================================= */
+.card {
+  border-radius: var(--kb-radius);
+  border: 1px solid var(--sl-color-hairline);
+  transition: transform var(--kb-transition), border-color var(--kb-transition),
+    box-shadow var(--kb-transition);
+  background-color: color-mix(in srgb, var(--sl-color-accent-low) 12%, var(--sl-color-black));
+}
+
+:root[data-theme='light'] .card {
+  background-color: color-mix(in srgb, var(--sl-color-accent-low) 20%, white);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--sl-color-accent) 55%, transparent);
+  box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
+}
+
+.card .icon {
+  color: var(--sl-color-text-accent);
+  background-color: var(--sl-color-accent-low);
+  border-radius: var(--kb-radius-sm);
+  padding: 6px;
+}
+
+/* =========================================================
+   Aside / Callout
+   ========================================================= */
+.starlight-aside {
+  border-radius: var(--kb-radius-sm);
+  border-inline-start-width: 4px;
+}
+.starlight-aside--tip {
+  background-color: color-mix(in srgb, var(--sl-color-accent-low) 35%, transparent);
+}
+
+/* =========================================================
+   Tombol focus ring aksesibel
+   ========================================================= */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: none;
+  box-shadow: var(--kb-ring);
+  border-radius: var(--kb-radius-sm);
+}
+
+/* =========================================================
+   Pagination (Prev / Next) di bawah halaman
+   ========================================================= */
+.pagination-links a {
+  border-radius: var(--kb-radius);
+  border: 1px solid var(--sl-color-hairline);
+  transition: border-color var(--kb-transition), background-color var(--kb-transition);
+}
+.pagination-links a:hover {
+  border-color: color-mix(in srgb, var(--sl-color-accent) 55%, transparent);
+  background-color: color-mix(in srgb, var(--sl-color-accent-low) 30%, transparent);
+}
