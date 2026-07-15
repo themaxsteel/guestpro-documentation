@@ -1,16 +1,18 @@
 ---
 title: Support Knowledge Base
-description: Pusat panduan internal untuk tim support
+description: Pusat dokumentasi resmi untuk tim Support GuestPro
 ---
 
-import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
-Pusat panduan internal untuk tim support. Gunakan kolom pencarian di atas untuk mencari fitur, menu, atau istilah tertentu dengan cepat.
+Pusat dokumentasi resmi untuk tim Support GuestPro. Seluruh panduan operasional, konfigurasi sistem, dan referensi teknis tersedia di sini untuk mendukung layanan yang konsisten dan akurat kepada pelanggan.
+
+Gunakan kolom pencarian di bagian atas halaman untuk menemukan panduan berdasarkan fitur, menu, atau istilah tertentu secara cepat.
 
 ## Kategori Panduan
 
 <CardGrid>
-	<Card title="GuestChat & WhatsApp" icon="approve-check">
+	<Card title="GuestChat" icon="approve-check">
 		Integrasi Fonnte, AI Assistant/Agent, manajemen percakapan, leads, dan sales funnel.
 
 		[Buka panduan →](/guestchat/)
@@ -20,27 +22,9 @@ Pusat panduan internal untuk tim support. Gunakan kolom pencarian di atas untuk 
 
 		[Buka panduan →](/booking-engine/calendar-display-configuration/)
 	</Card>
-	<Card title="PMS — Pembayaran" icon="seti:db">
-		Setup dan penggunaan fitur Guestbill / Online Payment serta payment gateway (CommercePay) di PMS.
+	<Card title="PMS (Property Management System)" icon="seti:db">
+		Pembayaran, operasional frontdesk, dan konfigurasi data master properti dalam satu sistem terpadu.
 
-		[Buka panduan →](/pms/guestbill-online-payment/)
-	</Card>
-	<Card title="PMS — Frontdesk" icon="document">
-		Reservasi, room plan, night audit, group reservation, guest profile, payment, dan operasional frontdesk lainnya.
-
-		[Buka panduan →](/pms/frontdesk/reservation/)
-	</Card>
-	<Card title="PMS — Master Data" icon="setting">
-		Konfigurasi agent, room type, rates, product sale, payment method, COA, dan data master PMS lainnya.
-
-		[Buka panduan →](/pms/master-data/agent-mapping/)
+		[Buka panduan →](/pms/)
 	</Card>
 </CardGrid>
-
----
-
-<Aside type="tip" title="Cara menambah panduan baru">
-1. Tambahkan file `.md` atau `.mdx` baru di dalam folder `src/content/docs/`.
-2. Daftarkan halaman itu di `astro.config.mjs`, bagian `sidebar:`.
-3. Jalankan `npm run dev` untuk preview langsung, atau `npm run build` untuk menghasilkan versi final di folder `dist/`.
-</Aside>
