@@ -29,6 +29,8 @@ Meta menghubungkan GuestChat langsung ke ekosistem Meta (Facebook, Instagram, Wh
 
 Channex berperan sebagai channel manager yang menghubungkan GuestChat dengan OTA seperti Booking.com, Airbnb, dan Expedia. Pesan dari platform pemesanan tersebut masuk ke inbox yang sama dengan kanal lainnya.
 
+Untuk langkah setup lengkap (instalasi app, webhook, hingga aktivasi Chat), lihat [halaman Setup Channex](/guestchat/channex-setup/).
+
 ## Ringkasan Ketergantungan Kanal
 
 | Kanal Tamu | Provider yang Dibutuhkan |

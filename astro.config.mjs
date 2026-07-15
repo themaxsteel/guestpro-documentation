@@ -24,14 +24,24 @@ export default defineConfig({
           items: [
             { label: 'Ringkasan', link: '/guestchat/' },
             { label: 'Setup & Integrasi Kanal', link: '/guestchat/channels/' },
+            { label: 'Setup Channex (Channel Manager)', link: '/guestchat/channex-setup/' },
             { label: 'AI Assistant & AI Agent', link: '/guestchat/ai-agent/' },
             { label: 'Kelola Percakapan & Leads', link: '/guestchat/manage-conversations/' },
+          ],
+        },
+        {
+          label: 'Booking Engine (GRB)',
+          items: [
+            { label: 'Konfigurasi Tampilan Kalender', link: '/booking-engine/calendar-display-configuration/' },
+            { label: 'Destination Area (Group Booking)', link: '/booking-engine/destination-area/' },
+            { label: 'Setup Meta Pixel & Meta CAPI', link: '/booking-engine/meta-pixel-capi/' },
           ],
         },
         {
           label: 'PMS - Pembayaran',
           items: [
             { label: 'Guestbill / Online Payment', link: '/pms/guestbill-online-payment/' },
+            { label: 'Setup CommercePay', link: '/pms/commercepay-setup/' },
           ],
         },
         {

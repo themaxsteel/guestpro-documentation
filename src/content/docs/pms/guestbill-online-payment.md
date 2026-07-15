@@ -52,16 +52,60 @@ Payment method yang baru dibuat di PMS perlu dihubungkan (mapping) ke payment me
 
 ## Cara Menggunakan
 
-Membuat tagihan online untuk tamu:
+*Modul Frontdesk – GuestPro PMS.* Fitur ini memungkinkan property mengirimkan tagihan (bill) sebuah reservasi kepada tamu dalam bentuk **QR Code** atau **link pembayaran**, sehingga tamu bisa membayar secara online tanpa transaksi tunai di front office. Alur ini diproses langsung dari detail Folio reservasi.
 
-1. Buka **Frontdesk → Reservation**, lalu pilih folio tamu yang ingin dibuatkan pembayaran.
-2. Di detail folio, klik tombol **Payment**.
-3. Di form payment, pilih **Payment Method** yang sudah dibuat, pastikan **Total Paid** sudah benar, lalu klik **Generate QR**.
-4. Sistem menampilkan QR code dan **Full URL** (link pembayaran). Pilih salah satu untuk ditunjukkan langsung ke tamu, atau kirimkan ke tamu (misalnya lewat tombol **Send Email**).
+### Prasyarat
+
+1. Payment method online (payment gateway) — misalnya Razorpay, Stripe, atau CommercePay — sudah di-setup dan **Active** di Booking Engine / Revenue Booster (lihat [Tahap 1](#tahap-1--cek-payment-method-di-grb) di atas — pastikan sudah **Active**). Metode inilah yang akan muncul pada Guest saat mereka mengakses QR atau link payment.
+2. Reservasi yang akan ditagih sudah dibuat dan memiliki saldo tagihan (*outstanding*/*balance*) yang belum terbayar.
+3. Akun bank penerima dana sudah didaftarkan bersama tim support GuestPro agar dana hasil pembayaran dapat ditarik (*withdraw*).
+
+:::note[Istilah]
+Singkatan "GRB" pada metode Payment QR GRB mengacu pada Guestpro Revenue Booster.
+:::
+
+### 1. Buka Reservasi pada Reservation Chart
+
+Login ke PMS GuestPro, lalu masuk ke modul **Frontdesk → Reservation**. Pada Reservation Chart, klik pada kotak reservasi (folio) milik tamu yang tagihannya akan dibayarkan secara online.
+
+![Memilih reservasi pada Reservation Chart](../../../assets/pms/guestbill-usage-01-reservation-chart.png)
+
+### 2. Buka Detail Folio dan Klik Payment
+
+Setelah kotak reservasi diklik, akan terbuka jendela detail **Folio** yang menampilkan ringkasan reservasi (tanggal check-in/out, tipe kamar, data tamu, Total Bill, dan Outstanding). Untuk memulai proses pembayaran online, klik tombol **Payment** berwarna hijau pada bagian atas jendela.
+
+![Detail Folio dengan tombol Payment](../../../assets/pms/guestbill-usage-02-folio-payment-button.png)
+
+### 3. Isi Form Payment dan Generate QR
+
+Pada form Payment, lengkapi data pembayaran. Bagian terpenting adalah **Payment Method**: pilih metode pembayaran online (misalnya **Payment QR GRB**). Setelah semua kolom terisi, klik tombol **Generate QR** untuk membuat QR Code / link pembayaran.
+
+| Field | Keterangan |
+|---|---|
+| Payment Date | Tanggal pembayaran diproses. |
+| Payment Method | Metode pembayaran. Pilih metode online (mis. Payment QR GRB) agar sistem menghasilkan QR / link pembayaran. |
+| Currency | Mata uang tagihan yang akan dibayar. |
+| Total Paid | Nominal yang akan dibayarkan tamu. Secara default terisi sesuai balance tagihan. |
+| Notes | Catatan tambahan untuk transaksi (opsional). |
+| Image | Unggah bukti/gambar pendukung bila diperlukan (opsional). |
+
+![Form Payment, pilih Payment Method lalu klik Generate QR](../../../assets/pms/guestbill-usage-03-payment-form-generate-qr.png)
+
+### 4. Tampilkan QR Code / Kirim Link ke Tamu
+
+Sistem akan menampilkan **QR Code** beserta **Full URL** tagihan. Ada dua cara menyampaikannya kepada tamu:
+
+- Tunjukkan QR Code di layar agar tamu dapat memindai (scan) langsung menggunakan kamera ponselnya; atau
+- Salin Full URL (ikon copy) untuk dikirim manual, atau klik tombol **Send Email** agar link pembayaran terkirim otomatis ke email tamu.
+
+![QR Code dan Full URL pembayaran, tombol Send Email](../../../assets/pms/guestbill-usage-04-qr-code-full-url.png)
 
 ## Tampilan di Sisi Tamu
 
-Setelah tamu scan QR atau membuka link, mereka langsung diarahkan ke halaman pembayaran online (Guestbill):
+Setelah tamu memindai QR atau membuka link, tamu akan diarahkan ke halaman **GuestBill**. Halaman ini menampilkan informasi property, detail reservasi (nama tamu, folio, tanggal check-in/out), rincian tagihan (Total, Paid, Balance), serta pilihan **payment method**. Tamu memilih metode yang diinginkan lalu menekan tombol **Pay Now** untuk menyelesaikan pembayaran.
 
-- Tamu melihat detail tagihan (detail kamar, tanggal, total, dan sisa yang harus dibayar).
-- Tamu memilih metode pembayaran yang tersedia, mengisi data kontak, lalu menyelesaikan pembayaran.
+![Halaman GuestBill sisi tamu, pilih metode lalu Pay Now](../../../assets/pms/guestbill-usage-05-guest-side-page.png)
+
+:::tip[Setelah Pembayaran Berhasil]
+Setelah tamu menyelesaikan pembayaran, status pembayaran akan terupdate dan tercatat pada Folio reservasi (Paid bertambah, Balance berkurang).
+:::
