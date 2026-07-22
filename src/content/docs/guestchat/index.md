@@ -9,9 +9,7 @@ Dengan GuestChat, seluruh percakapan dengan tamu (baik dari WhatsApp maupun Webc
 
 Setiap pesan WhatsApp yang masuk dari tamu akan otomatis muncul di inbox GuestChat, dan tim property bisa langsung membalasnya dari sana. Tamu tetap menerima balasan di WhatsApp mereka seperti biasa, sementara tim cukup bekerja dari satu layar.
 
-:::caution[Gambar belum tersedia]
-Placeholder gambar asli dari dokumen sumber (`image.png`) tidak valid. Ganti dengan screenshot asli, contoh: `![Inbox GuestChat](../../../assets/guestchat-inbox.png)`.
-:::
+![Inbox GuestChat](../../../assets/guestchat/guestchat-inbox-overview.webp)
 
 **Keuntungan:**
 

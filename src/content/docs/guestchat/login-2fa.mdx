@@ -1,0 +1,61 @@
+---
+title: "Login, SSO & Two-Factor Authentication (2FA)"
+description: Alur login GuestChat, aktivasi 2FA, dan login via SSO
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Login ke GuestChat
+
+Staff login menggunakan tiga data: **Username**, **Password**, dan **Company Code** (kode property). Sistem juga menjalankan verifikasi reCAPTCHA otomatis di belakang layar untuk mencegah bot.
+
+:::caution[Gambar belum tersedia]
+Tambahkan screenshot halaman login lengkap. Contoh: `![Halaman Login GuestChat](../../../assets/guestchat/guestchat-login-page.png)`.
+:::
+
+Hanya user dengan role **Admin**, **Supervisor**, atau **Agent** pada modul chat yang bisa login ke GuestChat. Jika role tidak memiliki akses tersebut, sistem menampilkan pesan **Access Denied**.
+
+:::caution[Gambar belum tersedia]
+Tambahkan screenshot modal Access Denied. Contoh: `![Access Denied](../../../assets/guestchat/guestchat-access-denied-modal.png)`.
+:::
+
+## Two-Factor Authentication (2FA) — Wajib Aktif
+
+GuestChat **mewajibkan 2FA** untuk semua akun. Ada dua kondisi saat login:
+
+<Tabs>
+	<TabItem label="2FA Belum Aktif">
+		Login akan **ditolak** dan muncul pesan *"Please activate Two Factor Authentication for your account"*, diikuti tutorial cara mengaktifkannya:
+
+		1. Login ke dashboard lama (Revenue Booster) melalui link yang diberikan.
+		2. Klik nama akun di pojok kanan atas → pilih **Edit** pada bagian profil.
+		3. Pada pop-up **Edit Profile**, buka tab **Security** → klik **Setup Two Factor Authentication** → ikuti instruksi di layar.
+		4. Setelah aktif, login ulang ke GuestChat.
+
+		:::caution[Gambar belum tersedia]
+		Tambahkan 2 screenshot step tutorial 2FA. Contoh: `![Tutorial 2FA Step 1](../../../assets/guestchat/guestchat-2fa-tutorial-step1.png)` dan `![Tutorial 2FA Step 2](../../../assets/guestchat/guestchat-2fa-tutorial-step2.png)`.
+		:::
+	</TabItem>
+	<TabItem label="2FA Sudah Aktif">
+		Setelah username/password benar, muncul modal untuk memasukkan **6 digit kode** dari authenticator app (Google Authenticator/Authy, dll). Kode juga bisa langsung ditempel (paste) sekaligus.
+
+		:::caution[Gambar belum tersedia]
+		Tambahkan screenshot modal verifikasi 2FA. Contoh: `![Verifikasi 2FA](../../../assets/guestchat/guestchat-2fa-verify-modal.png)`.
+		:::
+	</TabItem>
+</Tabs>
+
+## Login via SSO (Single Sign-On)
+
+Staff yang datang dari sistem PMS/dashboard lain (misalnya dashboard Revenue Booster) bisa masuk ke GuestChat otomatis lewat token SSO tanpa mengisi form login lagi.
+
+- **User sama** dengan yang sedang aktif di browser → langsung masuk ke inbox.
+- **User berbeda** dari sesi yang sedang aktif → GuestChat menampilkan pilihan: **lanjutkan sebagai user saat ini** atau **ganti ke user baru** dari token SSO.
+
+:::caution[Gambar belum tersedia]
+Tambahkan screenshot halaman konfirmasi SSO saat user berbeda terdeteksi. Contoh: `![Konfirmasi Akun SSO](../../../assets/guestchat/guestchat-sso-confirm-account.png)`.
+:::
+
+:::note[Catatan]
+Token SSO yang tidak valid akan otomatis diarahkan kembali ke halaman login setelah beberapa detik.
+:::
