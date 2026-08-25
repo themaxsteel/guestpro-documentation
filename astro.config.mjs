@@ -27,6 +27,7 @@ export default defineConfig({
             { label: 'Ringkasan', translations: { en: 'Overview' }, link: '/guestchat/' },
             { label: 'Login, SSO & 2FA', link: '/guestchat/login-2fa/' },
             { label: 'Setup & Integrasi Kanal', translations: { en: 'Channel Setup & Integration' }, link: '/guestchat/channels/' },
+            { label: 'Setup Fonnte (WhatsApp)', link: '/guestchat/fonnte-setup/' },
             { label: 'Setup Channex (Channel Manager)', translations: { en: 'Channex Setup (Channel Manager)' }, link: '/guestchat/channex-setup/' },
             { label: 'Chat Widget (Webchat)', link: '/guestchat/chat-widget/' },
             { label: 'AI Assistant & AI Agent', link: '/guestchat/ai-agent/' },

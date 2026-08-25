@@ -11,7 +11,7 @@ Ganti placeholder gambar di dokumen sumber dengan screenshot diagram kanal yang 
 
 ## 1. Fonnte (WhatsApp)
 
-Fonnte menghubungkan nomor WhatsApp property ke GuestChat, khusus untuk kanal WhatsApp.
+Fonnte menghubungkan nomor WhatsApp property ke GuestChat, khusus untuk kanal WhatsApp. Untuk langkah setup lengkap, lihat [halaman Setup Fonnte](/guestchat/fonnte-setup/).
 
 :::danger[Perlu diperhatikan]
 Fonnte menggunakan koneksi WhatsApp yang **tidak resmi**. Koneksi ini aman untuk membalas tamu yang menghubungi property lebih dulu. Namun jika nomor dipakai untuk memulai chat ke tamu terlebih dahulu (outbound), atau untuk mengirim pesan massal (bulk/broadcast), nomor **berisiko ditandai sebagai spam** lalu diblokir atau di-banned oleh WhatsApp. Untuk kebutuhan menyapa tamu duluan atau broadcast, sebaiknya gunakan provider WhatsApp resmi seperti Qontak atau Meta.
