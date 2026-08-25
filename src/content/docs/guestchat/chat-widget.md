@@ -7,6 +7,8 @@ description: Membuat, mengatur tampilan, dan memasang widget chat di website pro
 
 Chat Widget adalah kotak chat yang bisa dipasang di website/Booking Engine property, sehingga calon tamu bisa langsung bertanya tanpa meninggalkan halaman. Satu property bisa memiliki lebih dari satu widget (misalnya beda desain untuk beda tujuan).
 
+![Contoh tampilan Chat Widget di halaman Booking Engine, dari sisi tamu](../../../assets/guestchat/chat-widget-live-example.png)
+
 :::caution[Gambar belum tersedia]
 Tambahkan screenshot grid daftar Chat Widget (kondisi ada isi & kosong). Contoh: `![Daftar Chat Widget](../../../assets/guestchat/chat-widget-grid.png)`.
 :::

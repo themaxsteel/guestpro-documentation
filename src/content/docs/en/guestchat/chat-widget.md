@@ -7,6 +7,8 @@ description: Creating, styling, and installing a chat widget on the property's w
 
 Chat Widget is a chat box that can be installed on the property's website/Booking Engine, so prospective guests can ask questions right away without leaving the page. A single property can have more than one widget (for example, different designs for different purposes).
 
+![Example of the Chat Widget on a Booking Engine page, from the guest's side](../../../../assets/guestchat/chat-widget-live-example.png)
+
 :::caution[Image not yet available]
 Add a screenshot of the Chat Widget list grid (both with content and empty). Example: `![Chat Widget List](../../../../assets/guestchat/chat-widget-grid.png)`.
 :::

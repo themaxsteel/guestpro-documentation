@@ -7,6 +7,8 @@ description: Menu Management, Leads, dan Sales Funnel di GuestChat
 
 Setiap percakapan dilengkapi menu **Management** untuk membantu tim mengatur dan menindaklanjuti chat. Buka menu pada percakapan yang dipilih, lalu manfaatkan opsi berikut:
 
+![Menu Management pada percakapan: Mark as Unread, Reassign Guest, Assign Agent, Assign Segment, Add Notes, Sales Funnel](../../../assets/guestchat/manage-conversations-management-menu.png)
+
 | Fitur | Fungsi |
 |---|---|
 | **Mark as Unread** | Menandai percakapan sebagai belum dibaca, agar mudah ditindaklanjuti kembali nanti dan tidak terlewat. |
@@ -28,7 +30,11 @@ Dengan begitu, setiap orang yang menyapa property langsung tercatat dan siap dit
 
 **Lokasi menu:** `CRM → Guest Management → Sales Funnel`
 
+![Menu Sales Funnel di dalam CRM → Guest Management](../../../assets/guestchat/manage-conversations-sales-funnel-menu.png)
+
 Di halaman ini, property dapat melihat dan mengatur kelompok funnel seperti Cold Leads, Warm Leads, dan Hot Leads, lengkap dengan jumlah tamu di setiap tahap serta status aktif/nonaktifnya.
+
+![Halaman Sales Funnel dengan kartu Cold Leads, Hot Leads, dan Warm Leads](../../../assets/guestchat/manage-conversations-sales-funnel-cards.png)
 
 :::note[Catatan]
 Saat ini pengisian Sales Funnel dilakukan secara **manual** (assign langsung oleh tim), sehingga property memiliki kendali penuh dalam menentukan posisi setiap calon tamu.
@@ -39,3 +45,5 @@ Saat ini pengisian Sales Funnel dilakukan secara **manual** (assign langsung ole
 **Lokasi menu:** `CRM → Guest Management → Leads List`
 
 Seluruh calon tamu ditampilkan lengkap dengan **Nama, Email, Nomor Telepon, Sumber (Source), dan Tanggal Bergabung**. Kolom *Source* menunjukkan asal tamu, misalnya WhatsApp atau Webchat, sehingga property tahu channel mana yang paling banyak mendatangkan calon tamu.
+
+![Halaman Leads List dengan kolom Name, Email, Phone, Source, dan Joined Date](../../../assets/guestchat/manage-conversations-leads-list.png)
