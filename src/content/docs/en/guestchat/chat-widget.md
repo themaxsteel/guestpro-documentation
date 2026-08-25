@@ -9,48 +9,49 @@ Chat Widget is a chat box that can be installed on the property's website/Bookin
 
 ![Example of the Chat Widget on a Booking Engine page, from the guest's side](../../../../assets/guestchat/chat-widget-live-example.png)
 
-:::caution[Image not yet available]
-Add a screenshot of the Chat Widget list grid (both with content and empty). Example: `![Chat Widget List](../../../../assets/guestchat/chat-widget-grid.png)`.
-:::
+![Chat Widget list page showing the widget grid and the New Widget button](../../../../assets/guestchat/chat-widget-grid.png)
 
 ## Creating a New Widget
 
-Click **New Widget**, then fill in the settings across the following 5 tabs:
+Click **New Widget**, then fill in the settings across the following 6 tabs:
 
 ### 1. General
 Widget name (internal), agent name shown to guests, the **Widget Active** toggle (visible/not visible to visitors), and **Management Mode** (when active, visitors choose a property first before chatting — suitable for a property group).
 
-:::caution[Image not yet available]
-Add a screenshot of the General tab. Example: `![Chat Widget - General Tab](../../../../assets/guestchat/chat-widget-tab-general.png)`.
-:::
+![Chat Widget - General tab with Widget Name, Agent Name, Widget Active, and Management Mode](../../../../assets/guestchat/chat-widget-tab-general.png)
 
 ### 2. Appearance
-Logo, banner (shown on the welcome screen before the guest starts chatting), floating icon (the floating chat button icon), title & body fonts (upload TTF/OTF/WOFF files), and color scheme (background & text) for each widget element.
+Logo, banner (shown on the welcome screen before the guest starts chatting), and floating icon (the floating chat button icon).
 
-:::caution[Image not yet available]
-Add a screenshot of the Appearance tab, including the color picker. Example: `![Chat Widget - Appearance Tab](../../../../assets/guestchat/chat-widget-tab-appearance.png)`.
-:::
+![Chat Widget - Appearance tab section for Logo, Banner Image, and Floating Icon](../../../../assets/guestchat/chat-widget-tab-appearance.png)
+
+Title & body fonts (upload TTF/OTF/WOFF/WOFF2 files), and color scheme (background & text) for each widget element — **Main** (header), **Agent** (staff chat bubble), and **Visitor** (guest chat bubble).
+
+![Chat Widget - Appearance tab section for Title/Body Font and Color Scheme](../../../../assets/guestchat/chat-widget-tab-appearance-fonts-colors.png)
 
 ### 3. Text & Layout
-Welcome Title & Message (welcome text on the banner), Placeholder Text (message input field), Greeting Message (bubble above the floating chat button), and widget position on screen (left/right, top/bottom).
+Welcome Title & Message (welcome text on the banner), Placeholder Text (message input field), and Greeting Message (bubble above the floating chat button).
 
-:::caution[Image not yet available]
-Add a screenshot of the Text & Layout tab, including the widget position selection grid. Example: `![Chat Widget - Text & Layout Tab](../../../../assets/guestchat/chat-widget-tab-text-layout.png)`.
-:::
+![Chat Widget - Text & Layout tab section for Welcome Title, Welcome Message, Placeholder Text, and Greeting Message](../../../../assets/guestchat/chat-widget-tab-text-layout.png)
+
+Widget position on screen can be chosen from 4 options: **Top Left**, **Top Right**, **Bot Left**, or **Bot Right**.
+
+![Chat Widget - Text & Layout tab Widget Position selector](../../../../assets/guestchat/chat-widget-tab-widget-position.png)
 
 ### 4. Quick Chat
-A list of ready-made questions/shortcuts that visitors can click directly to start a chat (for example, "Check room availability"). Item order can be rearranged via drag & drop.
+A list of ready-made shortcuts that visitors can tap directly to start a chat. Each shortcut has a title, a short description, and an auto-sent message that fires when tapped (for example, "Check Availability" — "Rooms & rates"). Add new shortcuts via **Add Another Shortcut**, reorder items via drag & drop, and check the result live with **Preview Quick Chat**.
 
-:::caution[Image not yet available]
-Add a screenshot of the Quick Chat tab. Example: `![Chat Widget - Quick Chat Tab](../../../../assets/guestchat/chat-widget-tab-quick-chat.png)`.
-:::
+![Chat Widget - Quick Chat tab with the shortcut list and Quick Chat button preview](../../../../assets/guestchat/chat-widget-tab-quick-chat.png)
 
-### 5. Domains & Embed
-A list of website domains allowed to display this widget (**allowed origins** — the widget won't appear on domains that aren't registered). This tab also shows the embed code to install on the website, but it only becomes available after the widget is saved for the first time.
+### 5. Advanced
+**Custom CSS** — a field for adding extra styling to the widget. Changes here are applied directly to the widget, but aren't reflected live in the preview panel.
 
-:::caution[Image not yet available]
-Add a screenshot of the Domains & Embed tab. Example: `![Chat Widget - Domains & Embed Tab](../../../../assets/guestchat/chat-widget-tab-domains-embed.png)`.
-:::
+![Chat Widget - Advanced tab with the Custom CSS field](../../../../assets/guestchat/chat-widget-tab-advanced.png)
+
+### 6. Domains & Embed
+A list of website domains allowed to display this widget (**allowed origins** — the widget won't appear on domains that aren't registered). There's also an **Enable in Group Booking Engine** toggle to show this widget in the Group Booking Engine (multi-property management). This tab also shows the embed code to install on the website, but it only becomes available after the widget is saved for the first time.
+
+![Chat Widget - Domains & Embed tab with Allowed Origins, the Enable in Group Booking Engine toggle, and the embed code](../../../../assets/guestchat/chat-widget-tab-domains-embed.png)
 
 ## Installing the Widget on a Website (Install)
 
