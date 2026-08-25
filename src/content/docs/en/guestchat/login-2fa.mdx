@@ -1,0 +1,61 @@
+---
+title: "Login, SSO & Two-Factor Authentication (2FA)"
+description: GuestChat login flow, 2FA activation, and SSO login
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Logging in to GuestChat
+
+Staff log in using three pieces of data: **Username**, **Password**, and **Company Code** (property code). The system also runs an automatic reCAPTCHA verification behind the scenes to prevent bots.
+
+:::caution[Image not yet available]
+Add a screenshot of the full login page. Example: `![GuestChat Login Page](../../../../assets/guestchat/guestchat-login-page.png)`.
+:::
+
+Only users with the **Admin**, **Supervisor**, or **Agent** role on the chat module can log in to GuestChat. If the role doesn't have that access, the system shows an **Access Denied** message.
+
+:::caution[Image not yet available]
+Add a screenshot of the Access Denied modal. Example: `![Access Denied](../../../../assets/guestchat/guestchat-access-denied-modal.png)`.
+:::
+
+## Two-Factor Authentication (2FA) — Mandatory
+
+GuestChat **requires 2FA** for all accounts. There are two conditions at login:
+
+<Tabs>
+	<TabItem label="2FA Not Yet Active">
+		Login will be **rejected** and the message *"Please activate Two Factor Authentication for your account"* will appear, followed by a tutorial on how to activate it:
+
+		1. Log in to the old dashboard (Revenue Booster) via the provided link.
+		2. Click the account name in the top-right corner → select **Edit** on the profile section.
+		3. In the **Edit Profile** pop-up, open the **Security** tab → click **Setup Two Factor Authentication** → follow the on-screen instructions.
+		4. Once active, log back in to GuestChat.
+
+		:::caution[Image not yet available]
+		Add 2 screenshots of the 2FA tutorial steps. Example: `![2FA Tutorial Step 1](../../../../assets/guestchat/guestchat-2fa-tutorial-step1.png)` and `![2FA Tutorial Step 2](../../../../assets/guestchat/guestchat-2fa-tutorial-step2.png)`.
+		:::
+	</TabItem>
+	<TabItem label="2FA Already Active">
+		After the username/password is correct, a modal appears to enter a **6-digit code** from an authenticator app (Google Authenticator/Authy, etc.). The code can also be pasted directly all at once.
+
+		:::caution[Image not yet available]
+		Add a screenshot of the 2FA verification modal. Example: `![2FA Verification](../../../../assets/guestchat/guestchat-2fa-verify-modal.png)`.
+		:::
+	</TabItem>
+</Tabs>
+
+## Login via SSO (Single Sign-On)
+
+Staff coming from another PMS/dashboard system (such as the Revenue Booster dashboard) can enter GuestChat automatically via an SSO token without filling in the login form again.
+
+- **Same user** as the one currently active in the browser → goes straight into the inbox.
+- **Different user** from the active session → GuestChat shows a choice: **continue as the current user** or **switch to the new user** from the SSO token.
+
+:::caution[Image not yet available]
+Add a screenshot of the SSO confirmation page when a different user is detected. Example: `![SSO Account Confirmation](../../../../assets/guestchat/guestchat-sso-confirm-account.png)`.
+:::
+
+:::note[Note]
+An invalid SSO token will automatically redirect back to the login page after a few seconds.
+:::

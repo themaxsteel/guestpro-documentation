@@ -1,0 +1,74 @@
+---
+title: AI Assistant & AI Agent
+description: Details of the AI Assistant and AI Agent features in GuestChat
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## AI Help for Replying to Guests Faster (AI Assistant)
+
+GuestChat comes with AI assistance ready to help the team draft replies. Just click, and a draft answer is instantly available. The team can send it (**Send**), adjust it (**Edit**), or request a new version (**Retry**). Special instructions can also be given, such as *"make an English version"*, or a reply tone can be chosen: **Friendly**, **Formal**, **Brief**, **Apologize politely**.
+
+:::caution[Image not yet available]
+Replace the image placeholder with an actual screenshot of the AI Assistant panel.
+:::
+
+## AI Agent: A Smart Assistant That Knows Your Property
+
+AI Assistant helps polish sentences, while **AI Agent** works at a smarter level because it knows the property's data and services. AI Agent can answer guest questions specifically — room availability, facility information, even helping with the booking process — just like staff who truly understand the property.
+
+### Two Working Modes
+
+<Tabs>
+	<TabItem label="Automatic Mode">
+		**Auto-Send Reply active** — AI Agent replies to guest messages on WhatsApp automatically, without waiting for staff. Suitable for fast 24-hour responses.
+	</TabItem>
+	<TabItem label="Recommendation Mode">
+		**Auto-Send Reply inactive** — AI Agent only prepares a draft reply as a suggestion. Staff still have the final say before the message is sent.
+	</TabItem>
+</Tabs>
+
+### Three Specialists in One AI Agent
+
+#### 1. Reservation Agent (Rooms & Bookings)
+
+Handles everything related to reservations in real time:
+
+- Daily availability check (*Daily Availability*)
+- Showing available rooms (*List Available Rooms*)
+- Room detail information (*Room Detail*)
+- Creating a reservation (*Create Reservation*) — AI Agent can process a booking all the way to sending a payment link directly to the guest, complete with an Invoice ID, cost breakdown, stay dates, and room type. The guest just clicks the link to complete payment, and the system monitors the payment status without staff needing to send it manually.
+
+#### 2. Concierge Agent (Property Information)
+
+Answers questions about the property and its surroundings:
+
+- Hotel information (*Hotel Information*)
+- Contact & social media (*Contact & Social Media*)
+- Nearby destinations (*Nearby Destination*)
+- General policy (*General Policy*)
+
+#### 3. Additional Service Agent (Additional Services)
+
+Helps guests discover extra experiences during their stay:
+
+- Room Dining & Spa overview (*Room Dining & Spa Overview*)
+- List of activities (*List Activities*)
+- List of outlets (*List Outlet*)
+- General details of activities & outlets (*General Details*)
+- Full product item link (*Full Product Item Link*)
+- Search based on guest preferences (*Search by Preferences*)
+
+### Configurable Settings
+
+| Setting | Function |
+|---|---|
+| **AI Identity** | Set the AI's name, tone of voice (Formal/Friendly), and language. Includes automatic language detection and a fallback language. |
+| **AI FAQ** | Add custom question-and-answer pairs as AI reference material. Each FAQ can be enabled/disabled. |
+| **Conversation Behavior** | Set a response delay (*debounce*) so rapid consecutive messages get merged into one, enable/disable Auto-Send, and set a closing offer of further help. |
+| **Fallback & Escalation** | Determine the message shown when the AI can't answer, along with the conditions that automatically escalate to human staff. |
+| **Chat Settings** | Display preferences for the AI panel on the staff side — auto-open the suggestion panel, auto-focus the input field, Enter key to send. |
+
+:::tip[Note]
+With this combination, AI Agent can act as a digital receptionist ready 24/7 to answer, inform, and even help guests book — while still handing off the conversation to the team when needed.
+:::
